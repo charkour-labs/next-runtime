@@ -1,5 +1,86 @@
 # Changelog
 
+## [5.14.0](https://github.com/charkour-labs/next-runtime/compare/v5.13.4...v5.14.0) (2025-10-03)
+
+
+### Features
+
+* cache 404s indefinitely for bot probes ([#2668](https://github.com/charkour-labs/next-runtime/issues/2668)) ([60885d2](https://github.com/charkour-labs/next-runtime/commit/60885d2725de5d1c465a4405fdf86f1808c8434c))
+* check for netlify forms workaround ([#2523](https://github.com/charkour-labs/next-runtime/issues/2523)) ([b1a8620](https://github.com/charkour-labs/next-runtime/commit/b1a8620b20e9a407f1c5234b81a15311fbd13b21))
+* fail build when netlify forms detected without workaround ([#2539](https://github.com/charkour-labs/next-runtime/issues/2539)) ([56fef5f](https://github.com/charkour-labs/next-runtime/commit/56fef5fac626bf0e7fc44014b085f759be00dd40))
+* make CDN SWR background revalidation discard stale cache content in order to produce fresh responses ([#2765](https://github.com/charkour-labs/next-runtime/issues/2765)) ([f8004d7](https://github.com/charkour-labs/next-runtime/commit/f8004d76ba7bb669ffc17c744a0df8e132473979))
+* Node.js Middleware support ([#3018](https://github.com/charkour-labs/next-runtime/issues/3018)) ([ddfe7f4](https://github.com/charkour-labs/next-runtime/commit/ddfe7f40bc0f96bf8195e7e02818bafd20c0288f))
+* restore NETLIFY_NEXT_PLUGIN_SKIP ([#3017](https://github.com/charkour-labs/next-runtime/issues/3017)) ([0b51c47](https://github.com/charkour-labs/next-runtime/commit/0b51c4741ee82a230987122c222a14415f65dfd9))
+* support 'use cache' ([#2862](https://github.com/charkour-labs/next-runtime/issues/2862)) ([2810004](https://github.com/charkour-labs/next-runtime/commit/2810004a2cbeeb738cbe7cf70f2b8bd2bbea6156))
+* support after() ([#2717](https://github.com/charkour-labs/next-runtime/issues/2717)) ([51e5373](https://github.com/charkour-labs/next-runtime/commit/51e5373e4914e9b76edf439e8de01c561742bdaa))
+* support next/image with static exports ([#2563](https://github.com/charkour-labs/next-runtime/issues/2563)) ([b000c43](https://github.com/charkour-labs/next-runtime/commit/b000c430ce486279178f3aa5f275c66a508fb1c8))
+* use Netlify Durable Cache ([#2510](https://github.com/charkour-labs/next-runtime/issues/2510)) ([233fc2f](https://github.com/charkour-labs/next-runtime/commit/233fc2f0526467264995e586ab4c2ec1facdd5df))
+* warn when netlify form detected ([195b8b2](https://github.com/charkour-labs/next-runtime/commit/195b8b265d1593ede9b6a4d770eade7f6bc4f462))
+
+
+### Bug Fixes
+
+* add a fallback for loadManifest import path ([#2881](https://github.com/charkour-labs/next-runtime/issues/2881)) ([a9119d3](https://github.com/charkour-labs/next-runtime/commit/a9119d3574e30dd61b22ab80f273f12ed7f2982f))
+* add data request query param to the cache key ([#2701](https://github.com/charkour-labs/next-runtime/issues/2701)) ([00e3a4b](https://github.com/charkour-labs/next-runtime/commit/00e3a4be19bf8428ea6ce1ed2ae74a8ac8375532))
+* add debug information around potential html/rsc response mismatches ([#2816](https://github.com/charkour-labs/next-runtime/issues/2816)) ([70f9b15](https://github.com/charkour-labs/next-runtime/commit/70f9b152ace8ad36911c5018eac89c6336b5c5df))
+* add more measures to prevent using data-cache for blob operations ([#2775](https://github.com/charkour-labs/next-runtime/issues/2775)) ([58cafc1](https://github.com/charkour-labs/next-runtime/commit/58cafc152ec70539122b87e46578abd75dc9daa8))
+* address edge can read request body failures ([#2890](https://github.com/charkour-labs/next-runtime/issues/2890)) ([5489c0d](https://github.com/charkour-labs/next-runtime/commit/5489c0da29fb863ff2efb624b4dd128b5f37a8f0))
+* adjust cache-control handling for next@15.0.0-canary.187 ([#2666](https://github.com/charkour-labs/next-runtime/issues/2666)) ([7e5253d](https://github.com/charkour-labs/next-runtime/commit/7e5253dfa63f46b96abe8bf17df1602319445602))
+* adjust middleware json data rewrite to work with recent next@canary ([#2734](https://github.com/charkour-labs/next-runtime/issues/2734)) ([5a602c3](https://github.com/charkour-labs/next-runtime/commit/5a602c30af16a3d91272f03ebb53b3a49c57f728))
+* allow dot files in function bundle ([#3118](https://github.com/charkour-labs/next-runtime/issues/3118)) ([8cd51b5](https://github.com/charkour-labs/next-runtime/commit/8cd51b5633fee4629d12601aac59c637dafa7c9a))
+* apply caching headers to pages router 404 with getStaticProps ([#2764](https://github.com/charkour-labs/next-runtime/issues/2764)) ([3301077](https://github.com/charkour-labs/next-runtime/commit/3301077e8dd902241f79bb983ea7b73509e8d982))
+* apply type: module only to runtime modules ([#2549](https://github.com/charkour-labs/next-runtime/issues/2549)) ([325968d](https://github.com/charkour-labs/next-runtime/commit/325968d9fceb925d4972c242aea446f5a1cb2f8d))
+* cookies set in middleware accessible during the same request ([#2847](https://github.com/charkour-labs/next-runtime/issues/2847)) ([263853b](https://github.com/charkour-labs/next-runtime/commit/263853b0b33492eda65e2a406351257418e7e6ef))
+* create cache entries for fallback pages to support next@canary ([#2649](https://github.com/charkour-labs/next-runtime/issues/2649)) ([8ab259a](https://github.com/charkour-labs/next-runtime/commit/8ab259a95cdb8712661ab9c1cbb65206b2f9d5ae))
+* don't 404 on prefetches to fully static pages router pages when middleware is present ([#2957](https://github.com/charkour-labs/next-runtime/issues/2957)) ([7af10ec](https://github.com/charkour-labs/next-runtime/commit/7af10ec939e7a0767739b12d48867b3e4789a3fa))
+* don't cache POST when serving embedded static html ([#2766](https://github.com/charkour-labs/next-runtime/issues/2766)) ([28217d4](https://github.com/charkour-labs/next-runtime/commit/28217d47b3fd7b3ec639f860fb03fd9137ab5128))
+* don't set permanent caching header when res.revalidate() was used ([#2810](https://github.com/charkour-labs/next-runtime/issues/2810)) ([0e7e3a2](https://github.com/charkour-labs/next-runtime/commit/0e7e3a265d253cc5ab7d03855e39bee6ebf21d47))
+* dynamic not-prerendered routes revalidate tracking for next@&gt;=v15.2.1-canary.4 ([b242927](https://github.com/charkour-labs/next-runtime/commit/b242927cdc3a1f0df227889b333f3be7e921c73b))
+* edge-middleware i18n matching ([#2555](https://github.com/charkour-labs/next-runtime/issues/2555)) ([f02ef88](https://github.com/charkour-labs/next-runtime/commit/f02ef880f27bdc28f9e699757e8df9d2a1203438))
+* **edge-runtime:** match path with URI-encoded chars ([#2873](https://github.com/charkour-labs/next-runtime/issues/2873)) ([7fe6b3b](https://github.com/charkour-labs/next-runtime/commit/7fe6b3b634322de47d06110e952a5b67bc8e1d1c))
+* ensure background work is finished when response has 3xx or 5xx status code ([#2742](https://github.com/charkour-labs/next-runtime/issues/2742)) ([ff2632f](https://github.com/charkour-labs/next-runtime/commit/ff2632f2d5e391a1f087baaa484174fe27507dd2))
+* ensure internal `x-middleware-set-cookie` header is not passed on to lambda ([#2891](https://github.com/charkour-labs/next-runtime/issues/2891)) ([b3ab558](https://github.com/charkour-labs/next-runtime/commit/b3ab558bf50ded49cb6dac1ff714926c2832413d))
+* exclude `musl` binaries from function bundle when building on Netlify with `pnpm` ([#3145](https://github.com/charkour-labs/next-runtime/issues/3145)) ([d11382c](https://github.com/charkour-labs/next-runtime/commit/d11382c06c6c2e6d3e8c40fe4cfd47dc9df00384))
+* fail build/deploy when using not yet unsupported Node.js Midleware ([#3016](https://github.com/charkour-labs/next-runtime/issues/3016)) ([8c86b77](https://github.com/charkour-labs/next-runtime/commit/8c86b77864f150f86e8d029bb9479df67356ce8b))
+* forcefully add _rsc query param to vary ([#2827](https://github.com/charkour-labs/next-runtime/issues/2827)) ([af8bb84](https://github.com/charkour-labs/next-runtime/commit/af8bb84f762ad1beccd76f9dbddff030eedf8d2a))
+* generate correct import path when 'src' directory is used and middleware imports wasm module ([#2583](https://github.com/charkour-labs/next-runtime/issues/2583)) ([b54b682](https://github.com/charkour-labs/next-runtime/commit/b54b682db7fb92242175482c5d9fc201c9899d63))
+* glob subdirectories in server/chunks to support turbopack builds ([#2987](https://github.com/charkour-labs/next-runtime/issues/2987)) ([e7bf18f](https://github.com/charkour-labs/next-runtime/commit/e7bf18fdb6e4d97189447cc6a7629e7cc5287bb0))
+* handle case of env not being defined for edge functions ([#2936](https://github.com/charkour-labs/next-runtime/issues/2936)) ([ca1b7e8](https://github.com/charkour-labs/next-runtime/commit/ca1b7e8f54e101bef76c1c3675b299ae90edac44))
+* handle case of zero-length cacheable route handler responses ([#2819](https://github.com/charkour-labs/next-runtime/issues/2819)) ([530d2c5](https://github.com/charkour-labs/next-runtime/commit/530d2c5bab7c2bda2f5157226e84d7ee050afb86))
+* handle cases of chunked middleware ([#2574](https://github.com/charkour-labs/next-runtime/issues/2574)) ([666fe5a](https://github.com/charkour-labs/next-runtime/commit/666fe5a6f54c1134fe80054adcf6aac4aec1ec58))
+* handle edge runtime pages and middleware for turbopack builds ([#3009](https://github.com/charkour-labs/next-runtime/issues/3009)) ([42eeab8](https://github.com/charkour-labs/next-runtime/commit/42eeab89b37d548f90f62391a47c2a11ef63f8d1))
+* handle middleware redirects to default locale and same path ([#2636](https://github.com/charkour-labs/next-runtime/issues/2636)) ([f0fa7d0](https://github.com/charkour-labs/next-runtime/commit/f0fa7d0f6829265c04b7b1c90f24c1815c988648))
+* handle node middleware bundling when pnpm is used ([#3126](https://github.com/charkour-labs/next-runtime/issues/3126)) ([c29381e](https://github.com/charkour-labs/next-runtime/commit/c29381eddab51ecea734fb48d48ab13a3fdc4e9e))
+* handle non ASCII characters in cache-tag headers ([#2645](https://github.com/charkour-labs/next-runtime/issues/2645)) ([fcf2414](https://github.com/charkour-labs/next-runtime/commit/fcf241443cd10dac36e0466c4192bed19b853f00))
+* handle shared-cache-controls rename ([#2974](https://github.com/charkour-labs/next-runtime/issues/2974)) ([a4a03e1](https://github.com/charkour-labs/next-runtime/commit/a4a03e179e019cc307ca63ef0e06d0e1d58a69e9))
+* improved cdn cache hooks for dynamic 404 pages ([#2786](https://github.com/charkour-labs/next-runtime/issues/2786)) ([b4f04e3](https://github.com/charkour-labs/next-runtime/commit/b4f04e3c5a9c83c916f69c3e3c64e0d946ec3692))
+* make `revalidateTags` no-op when list of tags is empty ([#2727](https://github.com/charkour-labs/next-runtime/issues/2727)) ([38e58b3](https://github.com/charkour-labs/next-runtime/commit/38e58b3f46b78b307bcf7576a00849c41f495b52))
+* narrow down middleware i18n locale matcher to concrete locales ([#2768](https://github.com/charkour-labs/next-runtime/issues/2768)) ([f3e24b1](https://github.com/charkour-labs/next-runtime/commit/f3e24b1d2e4674574eef4c628d58b2d2a41e0be9))
+* narrow down mismatch content warning to non-304 responses ([#2826](https://github.com/charkour-labs/next-runtime/issues/2826)) ([5ecd720](https://github.com/charkour-labs/next-runtime/commit/5ecd72016d671ad0ae6084b396f2e31b349f0f15))
+* only clear stale functions with build through CLI ([#2536](https://github.com/charkour-labs/next-runtime/issues/2536)) ([3266808](https://github.com/charkour-labs/next-runtime/commit/32668082c1225afe365e4b7c75b847d722e9e775))
+* only set permament caching header when reading html file when it's not during server initialization AND when read html is Next produced fully static html ([#2935](https://github.com/charkour-labs/next-runtime/issues/2935)) ([6a8ef66](https://github.com/charkour-labs/next-runtime/commit/6a8ef6693e17febd1b6bb0fdc7bc32c7c2b9a5e7))
+* **perf:** exclude `/_next/static/*` from generated functions ([#3100](https://github.com/charkour-labs/next-runtime/issues/3100)) ([5e28132](https://github.com/charkour-labs/next-runtime/commit/5e2813227aa439fc39bad993c51329833f502ea1))
+* produce relative redirect location url for same origin ([#3129](https://github.com/charkour-labs/next-runtime/issues/3129)) ([9f42311](https://github.com/charkour-labs/next-runtime/commit/9f42311d1df7631558e10113f1c30d3ed99b16b0))
+* remove unused OTel tracing setup ([#2874](https://github.com/charkour-labs/next-runtime/issues/2874)) ([a220a30](https://github.com/charkour-labs/next-runtime/commit/a220a30fa3d5ff14b6059963630825c8b3dd1005))
+* revert "fix(perf): exclude /_next/static/* from generated functions ([#3100](https://github.com/charkour-labs/next-runtime/issues/3100))" ([8e14a76](https://github.com/charkour-labs/next-runtime/commit/8e14a760f63fa9ef042fede7c6ab3a703ab5ac7d))
+* RSC responses when using middleware rewrites or redirects for cacheable page being served for html requests ([#2843](https://github.com/charkour-labs/next-runtime/issues/2843)) ([9c8353b](https://github.com/charkour-labs/next-runtime/commit/9c8353b67a6485c90c1041d149ef991dc2034bf6))
+* set immutable cache-control for _next/static ([#2767](https://github.com/charkour-labs/next-runtime/issues/2767)) ([5bd68dd](https://github.com/charkour-labs/next-runtime/commit/5bd68ddb13109cb838056bbfcc8eca1113b69099))
+* set user agent for purge requests ([#2730](https://github.com/charkour-labs/next-runtime/issues/2730)) ([871f7b9](https://github.com/charkour-labs/next-runtime/commit/871f7b9d232015d1332756ad949bdd66d95f9084))
+* support ppr shells for dynamic page routes ([#3092](https://github.com/charkour-labs/next-runtime/issues/3092)) ([bfed78e](https://github.com/charkour-labs/next-runtime/commit/bfed78e9b927822582340c48741ea0ed19a5a676))
+* support segment data in cache entries ([#3093](https://github.com/charkour-labs/next-runtime/issues/3093)) ([1142752](https://github.com/charkour-labs/next-runtime/commit/1142752b0b9327d0c4f2a28efaca83dabb397415))
+* track revalidate / cdn purge to ensure it finishes execution and is not suspended mid-execution ([#2490](https://github.com/charkour-labs/next-runtime/issues/2490)) ([5a0fec5](https://github.com/charkour-labs/next-runtime/commit/5a0fec519ac4023c047fcbe03f61ed3a8a82be54))
+* update cache handler to accommodate changes in next@canary ([#2572](https://github.com/charkour-labs/next-runtime/issues/2572)) ([83f685e](https://github.com/charkour-labs/next-runtime/commit/83f685e15552cee1c8a4d6c68251c01ff1cfe3fb))
+* use alternative way of gathering api functions to anaylze ([#2654](https://github.com/charkour-labs/next-runtime/issues/2654)) ([e4916da](https://github.com/charkour-labs/next-runtime/commit/e4916da94ec12ad47792f16e5f3098337fa33f36))
+* use durable cache when serving stale response ([#2591](https://github.com/charkour-labs/next-runtime/issues/2591)) ([79e2a2c](https://github.com/charkour-labs/next-runtime/commit/79e2a2cef15a6e14835ec831ae6fa2faa6139b6d))
+* use uint8array for htmlrewriter wasm module instead of base64 ([25f6f30](https://github.com/charkour-labs/next-runtime/commit/25f6f300f481483ab445cf6fb2b9d181d50d2637))
+* use uint8array for user's wasm modules used in middleware instead of base64 ([#2740](https://github.com/charkour-labs/next-runtime/issues/2740)) ([aab8803](https://github.com/charkour-labs/next-runtime/commit/aab8803a20b7f0894e2314e9b4ee51d63966e1d1))
+* use version of htmlrewriter which does not make use of asyncify, which looks to have a potential memory leak under high load ([#2721](https://github.com/charkour-labs/next-runtime/issues/2721)) ([4d7ad97](https://github.com/charkour-labs/next-runtime/commit/4d7ad97c3f16b01000989bde06352f86b5d526ba))
+
+
+### Performance Improvements
+
+* memoize blobs requests in the request scope ([#2777](https://github.com/charkour-labs/next-runtime/issues/2777)) ([a2881bf](https://github.com/charkour-labs/next-runtime/commit/a2881bff4d0ebac18126924ce2fadbe36832983a))
+
 ## [5.13.4](https://github.com/opennextjs/opennextjs-netlify/compare/v5.13.3...v5.13.4) (2025-10-01)
 
 
